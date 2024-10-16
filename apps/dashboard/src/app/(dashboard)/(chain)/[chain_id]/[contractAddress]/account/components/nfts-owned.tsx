@@ -1,9 +1,9 @@
 "use client";
 
 import { useWalletNFTs } from "@3rdweb-sdk/react";
-import { NFTCards } from "contract-ui/tabs/overview/components/NFTCards";
 import type { ThirdwebContract } from "thirdweb";
 import { Text } from "tw-components";
+import { NFTCards } from "../../_components/NFTCards";
 
 interface NftsOwnedProps {
   contract: ThirdwebContract;
