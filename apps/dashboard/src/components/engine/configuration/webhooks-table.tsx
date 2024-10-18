@@ -1,3 +1,4 @@
+import { CopyTextButton } from "@/components/ui/CopyTextButton";
 import {
   type EngineWebhook,
   useEngineRevokeWebhook,
@@ -23,7 +24,6 @@ import { useTxNotifications } from "hooks/useTxNotifications";
 import { Trash2Icon } from "lucide-react";
 import { useState } from "react";
 import { Button, Card, FormLabel, Text } from "tw-components";
-import { AddressCopyButton } from "tw-components/AddressCopyButton";
 
 export function beautifyString(str: string): string {
   return str
@@ -58,10 +58,11 @@ const columns = [
     header: "Secret",
     cell: (cell) => {
       return (
-        <AddressCopyButton
-          address={cell.getValue() || ""}
-          title="secret"
-          size="xs"
+        <CopyTextButton
+          textToCopy={cell.getValue() || ""}
+          textToShow={cell.getValue() || ""}
+          tooltip="Secret"
+          copyIconPosition="right"
         />
       );
     },
